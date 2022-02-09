@@ -1,0 +1,2 @@
+# Projeto-Modulo-1-Inteli
+Jogo criado como projeto do módulo 1 do primeiro semestre de 2022 do Instituto de Tecnologia e Liderança. O projeto foi idealizado pelo professor, pesquisador e vice-reitor da Universidade de Medicina da USP, em parceria com o INTELI, com o objetivo de ser um veículo de propagação de informações e conscientização acerca das formas de prevenção dos principais tipos de câncer, além de fazer parte da metodologia baseada em projetos. 
