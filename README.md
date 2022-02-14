@@ -4,29 +4,26 @@
 <a href= "https://www.inteli.edu.br/"><img src="https://www.inteli.edu.br/wp-content/uploads/2021/08/20172028/marca_1-2.png" alt="Inteli - Instituto de Tecnologia e Liderança" border="0"></a>
 </p>
 
-# Nome do Projeto
+# Back 2 Life: The Second Chance
 
-## Nome do Grupo
+## 4Life Dev Team
 
-## Integrantes: <a href="https://www.linkedin.com/in/victorbarq/">Goku Sayajin</a>, <a href="https://www.linkedin.com/in/victorbarq/">Saitama One</a>, <a href="https://www.linkedin.com/in/victorbarq/">Ikki de Fenix</a>, <a href="https://www.linkedin.com/in/victorbarq/">Yusuke Urameshi</a>, <a href="https://www.linkedin.com/in/victorbarq/">Roronoa Zoro</a>
+## Integrantes: <a href="https://www.linkedin.com/in/antonio-nassar-65b9ba225">Antonio Barone Nassar</a>, <a href="https://www.linkedin.com/in/gabrielsporto/">Gabriel da Silva Porto</a>, <a href="https://www.linkedin.com/in/l%C3%ADvia-bonotto-9064641a3/">Lívia Mattoso Bonotto Cabral</a>, <a href="https://www.linkedin.com/in/luanadinamarcaparra/">Luana Dinamarca Parra</a>, <a href="https://www.linkedin.com/in/mateus-rafael-47601a1a0/">Mateus Rafael Miranda da Silva</a>, <a href="https://www.linkedin.com/in/patriciahonorato/">Patricia Honorato Moreira</a>, <a href="https://www.linkedin.com">Priscila Falcão dos Santos</a>
 
 ## Descrição
 
-📜 Descrição curta sobre o que seu projeto faz.
 <br><br>
-Meu projeto é um exemplo de como utilizar o github.
+Projeto de um jogo com o objetivo de promover a saúde pública. O jogo foi criado como ferramenta para conscientizar a população jovem acerca das formas de prevenção dos principais tipos de câncer, bem como a importância da adoção dos bons hábitos para promoção de um melhor resultado no tratamento do câncer. Os jovens serão o veículo de propagação de tais informações no ambiente familiar, a fim de atingir e conscientizar a população adulta e idosa. 
 <br><br>
 <p align="center">
-<img src="https://pix4free.org/assets/library/2021-01-20/originals/game.jpg" alt="NOME DO JOGO" border="0">
+<img src="https://pix4free.org/assets/library/2021-01-20/originals/game.jpg" alt="Back 2 Life" border="0">
   Game by <a href="http://www.nyphotographic.com/">Nick Youngson</a> <a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a> <a href="http://pix4free.org/">Pix4free</a>
 </p>
 
 
-💡 De um a dois parágrafos sobre o que é seu projeto e o que ele faz.
 <br><br>
-Meu projeto ajuda estudantes inteli a configurarem seus githubs.
-<br><br>
-May the force be with you!
+O jogo conta a história de um personagem que passa por uma situação de enfermidade (câncer), e ao se deparar com uma situação crítica de estresse, desencadeia um evento temporal que concede ao personagem o poder de voltar no tempo.
+Com essa habilidade, o personagem passa pelo desafio de se ver antes do diagnóstico do câncer, permitindo que ele tenha a possibilidade de alterar certos comportamentos e decisões nocivas que desencadearam seu câncer, bem como o resultado do seu tratamento. Sendo assim, o personagem enfrentará o desafio de tomar decisões e fazer escolhas que irão influenciar no enredo da história e seus possíveis finais.
 <br><br>
 
 ## 🛠 Estrutura de pastas
