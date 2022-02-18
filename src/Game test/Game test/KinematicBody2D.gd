@@ -9,6 +9,7 @@ const jump_FORCE = -550
 
 var motion = Vector2() 
  
+#Adição de gravidade.
 func _physics_process(_delta):
 
 	motion.y+= gravity
