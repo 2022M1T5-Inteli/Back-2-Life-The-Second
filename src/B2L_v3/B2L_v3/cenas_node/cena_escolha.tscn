@@ -1,0 +1,73 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://fase_ensinomedio/fase_escolha/Drinking1.png" type="Texture" id=1]
+[ext_resource path="res://fase_ensinomedio/fase_escolha/Drinking3.png" type="Texture" id=2]
+[ext_resource path="res://fase_ensinomedio/fase_escolha/Drinking2.png" type="Texture" id=3]
+[ext_resource path="res://chao/floor.png" type="Texture" id=4]
+[ext_resource path="res://cenas_node/escolha_ruim.gd" type="Script" id=5]
+[ext_resource path="res://fase_ensinomedio/fase_escolha/No_drinking1.png" type="Texture" id=6]
+[ext_resource path="res://fase_ensinomedio/fase_escolha/No_drinking2.png" type="Texture" id=7]
+[ext_resource path="res://fase_ensinomedio/fase_escolha/No_drinking3.png" type="Texture" id=8]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 3 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 3.0
+} ]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "default",
+"speed": 3.0
+} ]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 636, 360 )
+scale = Vector2( 6.625, 11.25 )
+texture = ExtResource( 4 )
+
+[node name="Button" type="Button" parent="."]
+margin_left = 72.0
+margin_top = 88.0
+margin_right = 592.0
+margin_bottom = 600.0
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Button"]
+position = Vector2( 260, 256 )
+scale = Vector2( 0.325, 0.426667 )
+frames = SubResource( 1 )
+playing = true
+
+[node name="Button2" type="Button" parent="."]
+margin_left = 640.0
+margin_top = 88.0
+margin_right = 1160.0
+margin_bottom = 608.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Button2"]
+position = Vector2( 260, 260 )
+scale = Vector2( 0.325, 0.433333 )
+frames = SubResource( 2 )
+frame = 1
+playing = true
+
+[connection signal="pressed" from="Button" to="Button" method="_on_Button_pressed"]
