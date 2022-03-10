@@ -1,0 +1,97 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://menu/iniciar2.png" type="Texture" id=1]
+[ext_resource path="res://cenas_node/Button_fechar.gd" type="Script" id=2]
+[ext_resource path="res://cenas_node/iniciar_button.gd" type="Script" id=3]
+[ext_resource path="res://sons/menu/bensound-tomorrow (online-audio-converter.com).wav" type="AudioStream" id=4]
+[ext_resource path="res://cenas_node/menu.gd" type="Script" id=5]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 4
+load_path = "res://.import/back3.png-7552bc6bf98588dfba653f15bf7b5e5a.stex"
+
+[sub_resource type="StreamTexture" id=2]
+flags = 4
+load_path = "res://.import/sair2.png-3ef26e1c0767e1b417ce0f7a6d0240f8.stex"
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 643.75, 347.5 )
+scale = Vector2( 0.664323, 0.641667 )
+texture = SubResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Button_iniciar" type="Button" parent="."]
+margin_left = 348.75
+margin_top = 564.5
+margin_right = 575.75
+margin_bottom = 663.5
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Button_iniciar"]
+position = Vector2( 115, 49 )
+scale = Vector2( 0.0843274, 0.0821339 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Button_fechar" type="Button" parent="."]
+margin_left = 801.75
+margin_top = 563.5
+margin_right = 1001.75
+margin_bottom = 664.5
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Button_fechar"]
+position = Vector2( 97, 52 )
+scale = Vector2( 0.0819267, 0.0796779 )
+texture = SubResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Button_\?" type="Button" parent="."]
+margin_left = 1172.75
+margin_top = 9.50018
+margin_right = 1273.75
+margin_bottom = 85.5002
+flat = true
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="musica_menu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -15.0
+autoplay = true
+
+[connection signal="mouse_entered" from="Button_iniciar" to="Button_iniciar" method="_on_Button_iniciar_mouse_entered"]
+[connection signal="mouse_exited" from="Button_iniciar" to="Button_iniciar" method="_on_Button_iniciar_mouse_exited"]
+[connection signal="pressed" from="Button_iniciar" to="Button_iniciar" method="_on_Button_iniciar_pressed"]
+[connection signal="mouse_entered" from="Button_fechar" to="Button_fechar" method="_on_Button_fechar_mouse_entered"]
+[connection signal="mouse_exited" from="Button_fechar" to="Button_fechar" method="_on_Button_fechar_mouse_exited"]
+[connection signal="pressed" from="Button_fechar" to="Button_fechar" method="_on_Button_fechar_pressed"]

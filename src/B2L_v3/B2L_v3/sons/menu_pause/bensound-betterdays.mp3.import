@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/bensound-betterdays.mp3-3ec0a1437e716ba80f03824f05386ebb.mp3str"
+
+[deps]
+
+source_file="res://sons/menu_pause/bensound-betterdays.mp3"
+dest_files=[ "res://.import/bensound-betterdays.mp3-3ec0a1437e716ba80f03824f05386ebb.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
