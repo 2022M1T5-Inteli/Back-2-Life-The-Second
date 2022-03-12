@@ -1,0 +1,43 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://fase_hospital/animacao_hospital5.png" type="Texture" id=1]
+[ext_resource path="res://fase_hospital/animacao_hospital6.png" type="Texture" id=2]
+[ext_resource path="res://fase_hospital/animacao_hospital7.png" type="Texture" id=3]
+[ext_resource path="res://fase_hospital/animacao_hospital3.png" type="Texture" id=4]
+[ext_resource path="res://fase_hospital/animacao_hospital4.png" type="Texture" id=5]
+[ext_resource path="res://fase_hospital/animacao_hospital1.png" type="Texture" id=6]
+[ext_resource path="res://fase_hospital/animacao_hospital2.png" type="Texture" id=7]
+[ext_resource path="res://fase_hospital/animacao_hospital9.7.png" type="Texture" id=8]
+[ext_resource path="res://fase_hospital/animacao_hospital9.6.png" type="Texture" id=9]
+[ext_resource path="res://fase_hospital/animacao_hospital9.9.3.png" type="Texture" id=10]
+[ext_resource path="res://fase_hospital/animacao_hospital9.9.1.png" type="Texture" id=11]
+[ext_resource path="res://fase_hospital/animacao_hospital9.5.png" type="Texture" id=12]
+[ext_resource path="res://fase_hospital/animacao_hospital9.9.2.png" type="Texture" id=13]
+[ext_resource path="res://fase_hospital/animacao_hospital9.4.png" type="Texture" id=14]
+[ext_resource path="res://fase_hospital/animacao_hospital9.3.png" type="Texture" id=15]
+[ext_resource path="res://cenas_node/animacao_hospital.gd" type="Script" id=16]
+[ext_resource path="res://fase_hospital/animacao_hospital9.png" type="Texture" id=17]
+[ext_resource path="res://fase_hospital/animacao_hospital9.1.png" type="Texture" id=18]
+[ext_resource path="res://fase_hospital/animacao_hospital8.png" type="Texture" id=19]
+[ext_resource path="res://fase_hospital/animacao_hospital9.2.png" type="Texture" id=20]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 19 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 20 ), ExtResource( 15 ), ExtResource( 14 ), ExtResource( 12 ), ExtResource( 10 ), ExtResource( 13 ), ExtResource( 11 ), ExtResource( 8 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "default",
+"speed": 2.0
+} ]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 516.5, 300.5 )
+scale = Vector2( 0.638125, 0.4975 )
+frames = SubResource( 1 )
+frame = 3
+speed_scale = 0.75
+playing = true
+script = ExtResource( 16 )
+
+[connection signal="animation_finished" from="AnimatedSprite" to="AnimatedSprite" method="_on_AnimatedSprite_animation_finished"]

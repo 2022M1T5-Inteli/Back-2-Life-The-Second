@@ -1,0 +1,29 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://fase_ensinomedio/1 storyboard.png" type="Texture" id=1]
+[ext_resource path="res://fase_ensinomedio/3 storyboard.png" type="Texture" id=2]
+[ext_resource path="res://fase_ensinomedio/4 storyboard.png" type="Texture" id=3]
+[ext_resource path="res://fase_ensinomedio/5 storyboard.png" type="Texture" id=4]
+[ext_resource path="res://fase_ensinomedio/2 storyboard.png" type="Texture" id=5]
+[ext_resource path="res://cenas_node/animacao_mae.gd" type="Script" id=6]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 5 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 1.0
+} ]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 514, 296.5 )
+scale = Vector2( 0.856667, 0.74125 )
+frames = SubResource( 1 )
+frame = 1
+speed_scale = 0.75
+playing = true
+script = ExtResource( 6 )
+
+[connection signal="animation_finished" from="AnimatedSprite" to="AnimatedSprite" method="_on_AnimatedSprite_animation_finished"]
