@@ -1,0 +1,164 @@
+[gd_scene load_steps=27 format=2]
+
+[ext_resource path="res://chao/chao.tres" type="TileSet" id=1]
+[ext_resource path="res://fase_ensinomedio/Cenario/festa02.png" type="Texture" id=2]
+[ext_resource path="res://chao/floor.png" type="Texture" id=3]
+[ext_resource path="res://fase_ensinomedio/vitor/vitor 3.png" type="Texture" id=4]
+[ext_resource path="res://fase_ensinomedio/vitor/vitor 2.png" type="Texture" id=5]
+[ext_resource path="res://fase_ensinomedio/vitor/vitor 6.png" type="Texture" id=6]
+[ext_resource path="res://fase_ensinomedio/vitor/vitor 1.png" type="Texture" id=7]
+[ext_resource path="res://fase_ensinomedio/carlos.png" type="Texture" id=8]
+[ext_resource path="res://fase_ensinomedio/luara.png" type="Texture" id=9]
+[ext_resource path="res://fase_ensinomedio/vitor/vitor 4.png" type="Texture" id=10]
+[ext_resource path="res://fase_ensinomedio/viviane.png" type="Texture" id=11]
+[ext_resource path="res://fase_ensinomedio/vitor/vitor 5.png" type="Texture" id=12]
+[ext_resource path="res://fase_ensinomedio/Cenario/festa4.png" type="Texture" id=13]
+[ext_resource path="res://fase_ensinomedio/jonny.png" type="Texture" id=14]
+[ext_resource path="res://cenas_node/andando_festa.gd" type="Script" id=15]
+[ext_resource path="res://fase_ensinomedio/caixa_dialogo.png" type="Texture" id=16]
+[ext_resource path="res://menu/Escolha.png" type="Texture" id=17]
+[ext_resource path="res://cenas_node/escolha1.gd" type="Script" id=18]
+[ext_resource path="res://fase_ensinomedio/Cenario/festa3.png" type="Texture" id=19]
+[ext_resource path="res://fase_ensinomedio/Cenario/festa5.png" type="Texture" id=20]
+[ext_resource path="res://fase_ensinomedio/Cenario/festa01.png" type="Texture" id=21]
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ ExtResource( 21 ), ExtResource( 2 ), ExtResource( 19 ), ExtResource( 13 ), ExtResource( 20 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 50.5, 328.5 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 52, 313 )
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 10 ), ExtResource( 12 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "walking",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 58.5, 236.5 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite" type="AnimatedSprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 744, 332 )
+scale = Vector2( 1.00454, 1.24583 )
+frames = SubResource( 5 )
+frame = 3
+playing = true
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+format = 1
+tile_data = PoolIntArray( 720895, 0, 0, 655360, 0, 0, 655361, 0, 0, 655362, 0, 0, 655363, 0, 0, 655364, 0, 0, 655365, 0, 0, 655366, 0, 0, 655367, 0, 0, 655368, 0, 0, 655369, 0, 0, 655370, 0, 0, 655371, 0, 0, 655372, 0, 0, 655373, 0, 0, 655374, 0, 0, 655375, 0, 0, 655376, 0, 0, 655377, 0, 0, 655378, 0, 0, 655379, 0, 0, 655380, 0, 0, 655381, 0, 0, 655382, 0, 0 )
+
+[node name="wall" type="StaticBody2D" parent="."]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall"]
+position = Vector2( -29.5, 304.5 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="wall"]
+position = Vector2( -32, 304 )
+scale = Vector2( 0.625, 10.4844 )
+texture = ExtResource( 3 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 1536, 16 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 12, 303 )
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="StaticBody2D"]
+position = Vector2( 28, 295.5 )
+scale = Vector2( 0.708333, 10.2344 )
+texture = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 464, 368 )
+scale = Vector2( 0.483015, 0.471188 )
+texture = ExtResource( 14 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 711.563, 352.938 )
+scale = Vector2( 0.579352, 0.540066 )
+texture = ExtResource( 11 )
+
+[node name="Sprite3" type="Sprite" parent="."]
+position = Vector2( 232, 392 )
+scale = Vector2( 0.526009, 0.494898 )
+texture = ExtResource( 9 )
+
+[node name="Sprite4" type="Sprite" parent="."]
+position = Vector2( 981.125, 352.125 )
+scale = Vector2( 0.555732, 0.518907 )
+texture = ExtResource( 8 )
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+position = Vector2( -248, -8 )
+z_index = 1
+script = ExtResource( 15 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="KinematicBody2D"]
+position = Vector2( 341.545, 403.467 )
+scale = Vector2( 0.753249, 0.653527 )
+frames = SubResource( 3 )
+animation = "walking"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+position = Vector2( 349.5, 404.5 )
+shape = SubResource( 4 )
+
+[node name="Camera2D" type="Camera2D" parent="KinematicBody2D"]
+position = Vector2( 264, 40 )
+anchor_mode = 0
+current = true
+
+[node name="Sprite5" type="Sprite" parent="."]
+position = Vector2( 616, 160 )
+scale = Vector2( 0.307778, 0.316667 )
+texture = ExtResource( 16 )
+
+[node name="Button" type="Button" parent="."]
+margin_left = 488.0
+margin_top = 256.0
+margin_right = 688.0
+margin_bottom = 312.0
+script = ExtResource( 18 )
+
+[node name="Sprite" type="Sprite" parent="Button"]
+position = Vector2( 99, 25 )
+scale = Vector2( 0.594118, 0.516667 )
+texture = ExtResource( 17 )
+
+[connection signal="mouse_entered" from="Button" to="Button" method="_on_Button_mouse_entered"]
+[connection signal="mouse_exited" from="Button" to="Button" method="_on_Button_mouse_exited"]
+[connection signal="pressed" from="Button" to="Button" method="_on_Button_pressed"]

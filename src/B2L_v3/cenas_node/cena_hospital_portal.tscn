@@ -1,0 +1,139 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://chao/chao.tres" type="TileSet" id=1]
+[ext_resource path="res://fase_hospital/vitor/vitor1.png" type="Texture" id=2]
+[ext_resource path="res://cenas_node/hospital.gd" type="Script" id=3]
+[ext_resource path="res://fase_hospital/portal1.png" type="Texture" id=4]
+[ext_resource path="res://fase_hospital/vitor/vitor2.png" type="Texture" id=5]
+[ext_resource path="res://fase_hospital/vitor/vitor3.png" type="Texture" id=6]
+[ext_resource path="res://fase_hospital/vitor/vitor4.png" type="Texture" id=7]
+[ext_resource path="res://chao/floor.png" type="Texture" id=8]
+[ext_resource path="res://fase_hospital/vitor/vitor5.png" type="Texture" id=9]
+[ext_resource path="res://fase_hospital/cenario_hospital1.png" type="Texture" id=10]
+[ext_resource path="res://fase_hospital/portal.png" type="Texture" id=11]
+[ext_resource path="res://cenas_node/cena_hospital_portal.gd" type="Script" id=12]
+[ext_resource path="res://cenas_node/trasicao_portal.gd" type="Script" id=13]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 52, 322.5 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "walking",
+"speed": 6.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 66.875, 174 )
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=5]
+radius = 66.0
+height = 146.0
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 0.0 ]
+}
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 693, 294 )
+scale = Vector2( 0.816568, 0.842857 )
+texture = ExtResource( 10 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+format = 1
+tile_data = PoolIntArray( 589824, 0, 0, 589826, 0, 0, 589827, 0, 0, 589828, 0, 0, 589829, 0, 0, 589830, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589835, 0, 0, 589836, 0, 0, 589837, 0, 0, 589838, 0, 0, 589839, 0, 0, 589840, 0, 0, 589841, 0, 0, 589842, 0, 0, 589843, 0, 0 )
+
+[node name="wall1" type="StaticBody2D" parent="."]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall1"]
+position = Vector2( -42, 312.5 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="wall1"]
+position = Vector2( -45, 303 )
+scale = Vector2( 0.53125, 10.4688 )
+texture = ExtResource( 8 )
+
+[node name="wall2" type="StaticBody2D" parent="."]
+position = Vector2( 1476, 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall2"]
+position = Vector2( -42, 312.5 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="wall2"]
+position = Vector2( -45, 303 )
+scale = Vector2( 0.53125, 10.4688 )
+texture = ExtResource( 8 )
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+position = Vector2( 716, 18 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="KinematicBody2D"]
+position = Vector2( 298.177, 393 )
+scale = Vector2( 0.527308, 0.451219 )
+frames = SubResource( 2 )
+animation = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+position = Vector2( 305.875, 394 )
+shape = SubResource( 3 )
+
+[node name="Camera2D" type="Camera2D" parent="KinematicBody2D"]
+position = Vector2( 0, 135 )
+anchor_mode = 0
+current = true
+zoom = Vector2( 0.75, 0.75 )
+limit_left = 0
+limit_right = 1500
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Area2D"]
+position = Vector2( 90, 340 )
+scale = Vector2( 0.781106, 1 )
+frames = SubResource( 4 )
+frame = 1
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 101, 344 )
+shape = SubResource( 5 )
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_Area2D_body_entered"]
