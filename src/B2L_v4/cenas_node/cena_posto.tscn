@@ -1,0 +1,174 @@
+[gd_scene load_steps=26 format=2]
+
+[ext_resource path="res://chao/chao.tres" type="TileSet" id=1]
+[ext_resource path="res://fase_faculdade/dialogo/dialogo2.png" type="Texture" id=2]
+[ext_resource path="res://fase_faculdade/dialogo/dialogo1.png" type="Texture" id=3]
+[ext_resource path="res://chao/floor.png" type="Texture" id=4]
+[ext_resource path="res://fase_faculdade/dialogo/dialogo3.png" type="Texture" id=5]
+[ext_resource path="res://escolhas/Seguinte.png" type="Texture" id=6]
+[ext_resource path="res://cenas_node/andando_posto.gd" type="Script" id=7]
+[ext_resource path="res://cenas_node/escolha_posto.gd" type="Script" id=8]
+[ext_resource path="res://fase_faculdade/vitor/v2.png" type="Texture" id=9]
+[ext_resource path="res://fase_faculdade/vitor/v1.png" type="Texture" id=10]
+[ext_resource path="res://fase_faculdade/vitor/v4.png" type="Texture" id=11]
+[ext_resource path="res://fase_faculdade/vitor/v3.png" type="Texture" id=12]
+[ext_resource path="res://fase_faculdade/vitor/v5.png" type="Texture" id=13]
+[ext_resource path="res://fase_faculdade/cenario/posto2.png" type="Texture" id=14]
+[ext_resource path="res://fase_faculdade/fernanda/fumante falando 7.png" type="Texture" id=15]
+[ext_resource path="res://fase_faculdade/cenario/posto.png" type="Texture" id=16]
+[ext_resource path="res://fase_faculdade/fernanda/fumante falando 6.png" type="Texture" id=17]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 14 ), ExtResource( 16 ) ],
+"loop": true,
+"name": "default",
+"speed": 4.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 43, 312.5 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 182.5, 343.5 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 188.02, 255 )
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 2 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 1.0
+} ]
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ ExtResource( 17 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "default",
+"speed": 2.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 76.25, 285.5 )
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 12 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 9 ), ExtResource( 12 ), ExtResource( 11 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "walking",
+"speed": 5.0
+} ]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite" type="AnimatedSprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 704, 303 )
+scale = Vector2( 0.845151, 0.871429 )
+frames = SubResource( 1 )
+frame = 1
+playing = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( -33, 302.5 )
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="StaticBody2D"]
+position = Vector2( -36, 305 )
+scale = Vector2( 0.489583, 10.2969 )
+texture = ExtResource( 4 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2( 1474, -26 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( -267.5, 309 )
+shape = SubResource( 7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( -33, 302.5 )
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="StaticBody2D2"]
+position = Vector2( -36, 305 )
+scale = Vector2( 0.489583, 10.2969 )
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( -1278.98, 348.422 )
+rotation = -0.00897319
+shape = SubResource( 8 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+format = 1
+tile_data = PoolIntArray( 720894, 0, 0, 720895, 0, 0, 655360, 0, 0, 655361, 0, 0, 655362, 0, 0, 655363, 0, 0, 655364, 0, 0, 655365, 0, 0, 655366, 0, 0, 655367, 0, 0, 655368, 0, 0, 655369, 0, 0, 655370, 0, 0, 655371, 0, 0, 655372, 0, 0, 655373, 0, 0, 655374, 0, 0, 655375, 0, 0, 655376, 0, 0, 655377, 0, 0, 655378, 0, 0, 655379, 0, 0, 655380, 0, 0 )
+
+[node name="Button" type="Button" parent="."]
+margin_left = 537.0
+margin_top = 385.0
+margin_right = 713.0
+margin_bottom = 433.0
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite2" type="Sprite" parent="Button"]
+position = Vector2( 86.5, 23.125 )
+scale = Vector2( 0.532353, 0.564583 )
+texture = ExtResource( 6 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 662, 166 )
+scale = Vector2( 0.357971, 0.396825 )
+frames = SubResource( 5 )
+speed_scale = 0.9
+playing = true
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
+position = Vector2( 413, 326 )
+scale = Vector2( 0.693396, 0.645006 )
+frames = SubResource( 6 )
+frame = 1
+playing = true
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+position = Vector2( 143, 3 )
+script = ExtResource( 7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+position = Vector2( 777.25, 352.5 )
+shape = SubResource( 3 )
+
+[node name="Sprite" type="AnimatedSprite" parent="KinematicBody2D"]
+position = Vector2( 779, 310 )
+scale = Vector2( 0.823214, 0.655488 )
+frames = SubResource( 4 )
+animation = "walking"
+
+[node name="Camera2D" type="Camera2D" parent="KinematicBody2D"]
+position = Vector2( 164, 32 )
+anchor_mode = 0
+current = true
+zoom = Vector2( 0.9, 0.9 )
+limit_left = 10
+
+[connection signal="pressed" from="Button" to="Button" method="_on_Button_pressed"]

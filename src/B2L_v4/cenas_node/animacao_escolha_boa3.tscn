@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://fase_ensinomedio/fase_escolha/escolha_boa.webm" type="VideoStream" id=1]
+[ext_resource path="res://animacao_escolha_boa3.gd" type="Script" id=2]
+
+[node name="VideoPlayer" type="VideoPlayer"]
+margin_right = 1078.0
+margin_bottom = 609.0
+stream = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[connection signal="finished" from="." to="." method="_on_VideoPlayer_finished"]

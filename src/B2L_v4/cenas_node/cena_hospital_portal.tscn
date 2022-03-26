@@ -1,0 +1,153 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://chao/chao.tres" type="TileSet" id=1]
+[ext_resource path="res://fase_hospital/vitor/vitor1.png" type="Texture" id=2]
+[ext_resource path="res://cenas_node/hospital.gd" type="Script" id=3]
+[ext_resource path="res://fase_hospital/portal1.png" type="Texture" id=4]
+[ext_resource path="res://fase_hospital/vitor/vitor2.png" type="Texture" id=5]
+[ext_resource path="res://fase_hospital/vitor/vitor3.png" type="Texture" id=6]
+[ext_resource path="res://fase_hospital/vitor/vitor4.png" type="Texture" id=7]
+[ext_resource path="res://chao/floor.png" type="Texture" id=8]
+[ext_resource path="res://fase_hospital/vitor/vitor5.png" type="Texture" id=9]
+[ext_resource path="res://fase_hospital/cenario_hospital1.png" type="Texture" id=10]
+[ext_resource path="res://fase_hospital/portal.png" type="Texture" id=11]
+[ext_resource path="res://cenas_node/trasicao_portal.gd" type="Script" id=13]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 52, 322.5 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 55.25, 315 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "walking",
+"speed": 6.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 66.875, 200.5 )
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=5]
+radius = 66.0
+height = 136.0
+
+[node name="Node2D" type="Node2D"]
+__meta__ = {
+"_edit_horizontal_guides_": [ 0.0 ]
+}
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 755, 353.5 )
+scale = Vector2( 0.894674, 0.824286 )
+texture = ExtResource( 10 )
+
+[node name="TileMap" type="TileMap" parent="."]
+modulate = Color( 1, 0.972549, 0.972549, 1 )
+show_behind_parent = true
+tile_set = ExtResource( 1 )
+format = 1
+tile_data = PoolIntArray( 655360, 0, 0, 655361, 0, 0, 655362, 0, 0, 655363, 0, 0, 655364, 0, 0, 655365, 0, 0, 655366, 0, 0, 655367, 0, 0, 655368, 0, 0, 655369, 0, 0, 655370, 0, 0, 655371, 0, 0, 655372, 0, 0, 655373, 0, 0, 655374, 0, 0, 655375, 0, 0, 655376, 0, 0, 655377, 0, 0, 655378, 0, 0, 655379, 0, 0, 655380, 0, 0, 655381, 0, 0 )
+
+[node name="wall1" type="StaticBody2D" parent="."]
+position = Vector2( -7, 19 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall1"]
+position = Vector2( -42, 312.5 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="wall1"]
+position = Vector2( -45, 303 )
+scale = Vector2( 0.53125, 10.4688 )
+texture = ExtResource( 8 )
+
+[node name="wall2" type="StaticBody2D" parent="."]
+position = Vector2( 1606, 26 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall2"]
+position = Vector2( -42, 312.5 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="wall2"]
+position = Vector2( -45, 303 )
+scale = Vector2( 0.53125, 10.4688 )
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="wall2"]
+position = Vector2( -151.75, 312 )
+shape = SubResource( 6 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+position = Vector2( 716, 18 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="KinematicBody2D"]
+position = Vector2( 298.177, 393 )
+scale = Vector2( 0.527308, 0.451219 )
+frames = SubResource( 2 )
+animation = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+position = Vector2( 305.875, 420.5 )
+shape = SubResource( 3 )
+
+[node name="Camera2D" type="Camera2D" parent="KinematicBody2D"]
+position = Vector2( 0, 135 )
+anchor_mode = 0
+current = true
+zoom = Vector2( 0.75, 0.75 )
+limit_left = 0
+limit_right = 1500
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2( 42, 89 )
+script = ExtResource( 13 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Area2D"]
+position = Vector2( 61.5115, 303 )
+scale = Vector2( 0.603053, 0.857692 )
+frames = SubResource( 4 )
+playing = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 61, 319 )
+shape = SubResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_Area2D_body_entered"]

@@ -1,0 +1,62 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://menu/menu.gd" type="Script" id=1]
+[ext_resource path="res://menu/b3.s.png" type="Texture" id=2]
+[ext_resource path="res://menu/back3.png" type="Texture" id=3]
+[ext_resource path="res://menu/b1.s.png" type="Texture" id=4]
+[ext_resource path="res://menu/bensound-tomorrow.mp3" type="AudioStream" id=5]
+[ext_resource path="res://menu/b2.s.png" type="Texture" id=6]
+[ext_resource path="res://menu/b2.i.png" type="Texture" id=7]
+[ext_resource path="res://menu/b1.i.png" type="Texture" id=8]
+[ext_resource path="res://menu/b3.i.png" type="Texture" id=9]
+
+[node name="Node2D" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="btn_iniciar" type="TextureButton" parent="."]
+margin_left = 322.0
+margin_top = 485.0
+margin_right = 488.0
+margin_bottom = 559.0
+rect_pivot_offset = Vector2( -526, 108 )
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="btn_sair" type="TextureButton" parent="."]
+margin_left = 597.0
+margin_top = 485.0
+margin_right = 763.0
+margin_bottom = 556.0
+rect_pivot_offset = Vector2( -526, 108 )
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 2 )
+texture_hover = ExtResource( 6 )
+expand = true
+
+[node name="musica_menu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -15.0
+autoplay = true
+
+[connection signal="pressed" from="btn_iniciar" to="." method="_on_btn_iniciar_pressed"]
+[connection signal="pressed" from="btn_sair" to="." method="_on_btn_sair_pressed"]

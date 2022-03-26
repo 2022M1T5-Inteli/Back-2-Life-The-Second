@@ -1,0 +1,77 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://cenas_node/Button_boa.gd" type="Script" id=1]
+[ext_resource path="res://escolhas/fundo.png" type="Texture" id=2]
+[ext_resource path="res://escolhas/no_call_effect1.png" type="Texture" id=3]
+[ext_resource path="res://escolhas/no_call_effect4.png" type="Texture" id=4]
+[ext_resource path="res://escolhas/call1.png" type="Texture" id=5]
+[ext_resource path="res://escolhas/no_call_effect2.png" type="Texture" id=6]
+[ext_resource path="res://escolhas/call2.png" type="Texture" id=7]
+[ext_resource path="res://escolhas/call3.png" type="Texture" id=8]
+[ext_resource path="res://escolhas/no_call_effect3.png" type="Texture" id=9]
+[ext_resource path="res://cenas_node/Button_ruim.gd" type="Script" id=10]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 5 ), ExtResource( 7 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 6 ), ExtResource( 9 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = -2.0
+margin_top = -6.0
+margin_right = 1023.0
+margin_bottom = 604.0
+texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button_boa" type="Button" parent="."]
+margin_left = 27.0
+margin_top = 77.0
+margin_right = 510.0
+margin_bottom = 532.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Button_boa"]
+position = Vector2( 240, 226.125 )
+scale = Vector2( 0.305, 0.384792 )
+frames = SubResource( 1 )
+playing = true
+
+[node name="Button_ruim" type="Button" parent="."]
+margin_left = 519.0
+margin_top = 97.0
+margin_right = 998.0
+margin_bottom = 514.0
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Button_ruim"]
+position = Vector2( 248, 206 )
+scale = Vector2( 0.315, 0.381667 )
+frames = SubResource( 2 )
+frame = 3
+playing = true
+
+[connection signal="pressed" from="Button_boa" to="Button_boa" method="_on_Button_boa_pressed"]
+[connection signal="pressed" from="Button_ruim" to="Button_ruim" method="_on_Button_ruim_pressed"]
