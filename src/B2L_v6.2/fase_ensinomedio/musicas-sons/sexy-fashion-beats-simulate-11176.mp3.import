@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/sexy-fashion-beats-simulate-11176.mp3-67f39a52dced04e6d0af33efcbdaf82c.mp3str"
+
+[deps]
+
+source_file="res://fase_ensinomedio/musicas-sons/sexy-fashion-beats-simulate-11176.mp3"
+dest_files=[ "res://.import/sexy-fashion-beats-simulate-11176.mp3-67f39a52dced04e6d0af33efcbdaf82c.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

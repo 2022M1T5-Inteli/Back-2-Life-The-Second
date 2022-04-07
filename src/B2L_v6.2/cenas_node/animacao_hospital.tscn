@@ -1,0 +1,93 @@
+[gd_scene load_steps=22 format=2]
+
+[sub_resource type="GDScript" id=2]
+script/source = "extends Node2D
+#Storyboard: rascunho da animação que virá ser colocada entre as cenas interativas.
+
+func _on_AnimatedSprite_animation_finished(): #Transição de cena.
+	get_tree().change_scene(\"res://cenas_node/cena_hospital_portal.tscn\")
+
+func _ready():
+	Global.localizacao = $AnimatedSprite
+	Global.cena = \"res://cenas_node/animacao_hospital.gd\"
+	
+"
+
+[sub_resource type="StreamTexture" id=3]
+flags = 4
+
+[sub_resource type="StreamTexture" id=4]
+flags = 4
+
+[sub_resource type="StreamTexture" id=5]
+flags = 4
+
+[sub_resource type="StreamTexture" id=6]
+flags = 4
+
+[sub_resource type="StreamTexture" id=7]
+flags = 4
+
+[sub_resource type="StreamTexture" id=8]
+flags = 4
+
+[sub_resource type="StreamTexture" id=9]
+flags = 4
+
+[sub_resource type="StreamTexture" id=10]
+flags = 4
+
+[sub_resource type="StreamTexture" id=11]
+flags = 4
+
+[sub_resource type="StreamTexture" id=12]
+flags = 4
+
+[sub_resource type="StreamTexture" id=13]
+flags = 4
+
+[sub_resource type="StreamTexture" id=14]
+flags = 4
+
+[sub_resource type="StreamTexture" id=15]
+flags = 4
+
+[sub_resource type="StreamTexture" id=16]
+flags = 4
+
+[sub_resource type="StreamTexture" id=17]
+flags = 4
+
+[sub_resource type="StreamTexture" id=18]
+flags = 4
+
+[sub_resource type="StreamTexture" id=19]
+flags = 4
+
+[sub_resource type="StreamTexture" id=20]
+flags = 4
+
+[sub_resource type="StreamTexture" id=21]
+flags = 4
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ) ],
+"loop": true,
+"name": "default",
+"speed": 2.0
+} ]
+
+[node name="Node2D" type="Node2D"]
+script = SubResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 516.5, 300.5 )
+scale = Vector2( 0.638125, 0.4975 )
+frames = SubResource( 1 )
+frame = 6
+speed_scale = 0.75
+playing = true
+script = SubResource( 2 )
+
+[connection signal="animation_finished" from="AnimatedSprite" to="AnimatedSprite" method="_on_AnimatedSprite_animation_finished"]

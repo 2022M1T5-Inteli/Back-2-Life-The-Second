@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://fase_ensinomedio/fase_escolha/animacao_escolha_boa.webm" type="VideoStream" id=1]
+[ext_resource path="res://cenas_node/animacao_boa.gd" type="Script" id=2]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="VideoPlayer2" type="VideoPlayer" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+stream = ExtResource( 1 )
+autoplay = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="finished" from="VideoPlayer2" to="VideoPlayer2" method="_on_VideoPlayer2_finished"]

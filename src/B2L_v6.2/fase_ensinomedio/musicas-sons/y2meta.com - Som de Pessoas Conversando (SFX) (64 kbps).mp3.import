@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/y2meta.com - Som de Pessoas Conversando (SFX) (64 kbps).mp3-0ef998c07fc23a89c8ff62cf915dbae1.mp3str"
+
+[deps]
+
+source_file="res://fase_ensinomedio/musicas-sons/y2meta.com - Som de Pessoas Conversando (SFX) (64 kbps).mp3"
+dest_files=[ "res://.import/y2meta.com - Som de Pessoas Conversando (SFX) (64 kbps).mp3-0ef998c07fc23a89c8ff62cf915dbae1.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

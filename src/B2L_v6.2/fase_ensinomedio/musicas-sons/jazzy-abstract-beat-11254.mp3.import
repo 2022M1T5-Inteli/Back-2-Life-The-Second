@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/jazzy-abstract-beat-11254.mp3-ea355d339631d14abe2e8280f0cd1cc6.mp3str"
+
+[deps]
+
+source_file="res://fase_ensinomedio/musicas-sons/jazzy-abstract-beat-11254.mp3"
+dest_files=[ "res://.import/jazzy-abstract-beat-11254.mp3-ea355d339631d14abe2e8280f0cd1cc6.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

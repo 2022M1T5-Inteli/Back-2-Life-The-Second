@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/order-99518.mp3-09457bc6bdf8f793411a58b15a151a56.mp3str"
+
+[deps]
+
+source_file="res://fase_ensinomedio/musicas-sons/order-99518.mp3"
+dest_files=[ "res://.import/order-99518.mp3-09457bc6bdf8f793411a58b15a151a56.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

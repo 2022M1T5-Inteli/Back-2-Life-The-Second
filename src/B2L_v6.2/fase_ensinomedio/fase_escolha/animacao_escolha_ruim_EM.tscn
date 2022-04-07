@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://fase_ensinomedio/fase_escolha/Animacao_escolha_ruim.webm" type="VideoStream" id=1]
+[ext_resource path="res://cenas_node/video_escolha_ruim.gd" type="Script" id=2]
+[ext_resource path="res://fase_ensinomedio/musicas-sons/the-introvert-michael-kobrin-10959.mp3" type="AudioStream" id=3]
+
+[node name="VideoPlayer" type="VideoPlayer"]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VideoPlayer" type="VideoPlayer" parent="."]
+margin_right = 1022.0
+margin_bottom = 597.0
+stream = ExtResource( 1 )
+autoplay = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="musica_escolha" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -15.0
+autoplay = true
+
+[connection signal="finished" from="VideoPlayer" to="VideoPlayer" method="_on_VideoPlayer_finished"]

@@ -1,0 +1,109 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://fase_ensinomedio/fase_escolha/btn_ruim_EM.gd" type="Script" id=1]
+[ext_resource path="res://fase_ensinomedio/fase_escolha/btn_boa_EM.gd" type="Script" id=2]
+[ext_resource path="res://fase_ensinomedio/musicas-sons/mystique-16608.mp3" type="AudioStream" id=3]
+[ext_resource path="res://fase_ensinomedio/fase_escolha/nodrink_2.png" type="Texture" id=4]
+[ext_resource path="res://fase_ensinomedio/fase_escolha/nodrink_1.png" type="Texture" id=5]
+[ext_resource path="res://fase_ensinomedio/fase_escolha/drink3.png" type="Texture" id=6]
+[ext_resource path="res://fase_ensinomedio/fase_escolha/drink1.png" type="Texture" id=7]
+[ext_resource path="res://fase_ensinomedio/fase_escolha/nodrink_3.png" type="Texture" id=8]
+[ext_resource path="res://fase_ensinomedio/fase_escolha/drink2.png" type="Texture" id=9]
+[ext_resource path="res://escolhas/fundo.png" type="Texture" id=10]
+[ext_resource path="res://fontes/textos.tres" type="DynamicFont" id=11]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 5 ), ExtResource( 4 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "default",
+"speed": 3.0
+} ]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 7 ), ExtResource( 9 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "default",
+"speed": 3.0
+} ]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2( 176, 136 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color( 0.223529, 0.211765, 0.211765, 1 )
+margin_left = -177.0
+margin_top = -138.0
+margin_right = 847.0
+margin_bottom = 463.0
+texture = ExtResource( 10 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="btn_boa" type="Button" parent="."]
+margin_left = -174.0
+margin_top = -133.0
+margin_right = 334.0
+margin_bottom = 465.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="boa" type="AnimatedSprite" parent="btn_boa"]
+position = Vector2( 266.5, 329.5 )
+scale = Vector2( 0.345625, 0.484167 )
+frames = SubResource( 2 )
+playing = true
+
+[node name="btn_ruim" type="Button" parent="."]
+margin_left = 330.0
+margin_top = -135.0
+margin_right = 849.0
+margin_bottom = 464.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ruim" type="AnimatedSprite" parent="btn_ruim"]
+position = Vector2( 258.5, 325.5 )
+scale = Vector2( 0.344375, 0.4875 )
+frames = SubResource( 1 )
+frame = 2
+playing = true
+
+[node name="Label" type="Label" parent="."]
+margin_top = -169.0
+margin_right = 699.0
+margin_bottom = -28.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 11 )
+text = "escolha..."
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="musica_escolha" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -15.0
+autoplay = true
+
+[connection signal="mouse_entered" from="btn_boa" to="btn_boa" method="_on_btn_boa_mouse_entered"]
+[connection signal="mouse_exited" from="btn_boa" to="btn_boa" method="_on_btn_boa_mouse_exited"]
+[connection signal="pressed" from="btn_boa" to="btn_boa" method="_on_btn_boa_pressed"]
+[connection signal="mouse_entered" from="btn_ruim" to="btn_ruim" method="_on_btn_ruim_mouse_entered"]
+[connection signal="mouse_exited" from="btn_ruim" to="btn_ruim" method="_on_btn_ruim_mouse_exited"]
+[connection signal="pressed" from="btn_ruim" to="btn_ruim" method="_on_btn_ruim_pressed"]
