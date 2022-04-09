@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://video_introducao/video_introducao.gd" type="Script" id=1]
+[ext_resource path="res://video_introducao/video1.webm" type="VideoStream" id=2]
+[ext_resource path="res://video_introducao/p1.png" type="Texture" id=3]
+[ext_resource path="res://video_introducao/p3.png" type="Texture" id=4]
+[ext_resource path="res://video_introducao/p2.png" type="Texture" id=5]
+
+[node name="VideoPlayer" type="VideoPlayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+stream = ExtResource( 2 )
+volume_db = -10.0
+autoplay = true
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton" type="TextureButton" parent="."]
+anchor_left = 0.873
+anchor_top = 0.887
+anchor_right = 0.986
+anchor_bottom = 0.978
+margin_left = 0.0479736
+margin_top = -0.200012
+margin_right = 0.335938
+margin_bottom = 0.199951
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 4 )
+texture_hover = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="finished" from="." to="." method="_on_VideoPlayer_finished"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]

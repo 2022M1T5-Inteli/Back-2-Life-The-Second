@@ -1,0 +1,252 @@
+[gd_scene load_steps=33 format=2]
+
+[ext_resource path="res://chao/chao.tres" type="TileSet" id=1]
+[ext_resource path="res://fase_ensinomedio/NPCs/luara.png" type="Texture" id=2]
+[ext_resource path="res://cenas_node/Dialogos_global.gd" type="Script" id=3]
+[ext_resource path="res://cenas_node/Movimento.gd" type="Script" id=4]
+[ext_resource path="res://fase_ensinomedio/Cenario/spacebar.png" type="Texture" id=6]
+[ext_resource path="res://chao/floor.png" type="Texture" id=7]
+[ext_resource path="res://fase_ensinomedio/vitor/vitor 3.png" type="Texture" id=9]
+[ext_resource path="res://fase_ensinomedio/vitor/vitor 2.png" type="Texture" id=10]
+[ext_resource path="res://fase_ensinomedio/Cenario/festa3.png" type="Texture" id=11]
+[ext_resource path="res://fase_ensinomedio/Cenario/cerveja1.png" type="Texture" id=12]
+[ext_resource path="res://fase_ensinomedio/Cenario/festa01.png" type="Texture" id=13]
+[ext_resource path="res://fase_ensinomedio/Cenario/festa4.png" type="Texture" id=14]
+[ext_resource path="res://fase_ensinomedio/NPCs/viviane.png" type="Texture" id=15]
+[ext_resource path="res://fase_ensinomedio/Cenario/festa02.png" type="Texture" id=16]
+[ext_resource path="res://fase_ensinomedio/vitor/vitor 1.png" type="Texture" id=17]
+[ext_resource path="res://fase_ensinomedio/vitor/vitor 4.png" type="Texture" id=18]
+[ext_resource path="res://fase_ensinomedio/vitor/vitor 5.png" type="Texture" id=19]
+[ext_resource path="res://fase_ensinomedio/vitor/vitor 6.png" type="Texture" id=20]
+[ext_resource path="res://fase_ensinomedio/Cenario/cerveja2.png" type="Texture" id=21]
+[ext_resource path="res://fase_ensinomedio/Cenario/festa5.png" type="Texture" id=22]
+[ext_resource path="res://fase_ensinomedio/musicas-sons/jazzy-abstract-beat-11254.mp3" type="AudioStream" id=23]
+[ext_resource path="res://caixa_dialogo/box1.png" type="Texture" id=24]
+[ext_resource path="res://fase_ensinomedio/NPCs/jonny.png" type="Texture" id=25]
+[ext_resource path="res://fase_ensinomedio/NPCs/carlos.png" type="Texture" id=26]
+
+[sub_resource type="GDScript" id=6]
+script/source = "extends Node2D
+
+# Quando o jogador clica no ícone da bebida, ele é direcionado para a cena de escolha.
+func _on_bebida_pressed():
+	get_tree().change_scene(\"res://fase_ensinomedio/fase_escolha/cena_escolha_EM.tscn\")
+"
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ ExtResource( 13 ), ExtResource( 16 ), ExtResource( 11 ), ExtResource( 14 ), ExtResource( 22 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 70, 328.5 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 65, 313 )
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 17 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 17 ), ExtResource( 10 ), ExtResource( 9 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ) ],
+"loop": true,
+"name": "walking",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 58.5, 225 )
+
+[sub_resource type="Animation" id=8]
+resource_name = "barra"
+length = 0.6
+loop = true
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("barra:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.35 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 742, 156 ), Vector2( 742, 157.8 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "copo"
+length = 0.6
+loop = true
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.35 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 504, 284 ), Vector2( 504, 287 ) ]
+}
+
+[node name="cena_festa" type="Node2D"]
+position = Vector2( 6, 0 )
+script = SubResource( 6 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite" type="AnimatedSprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 745, 346 )
+scale = Vector2( 1.00454, 1.30958 )
+frames = SubResource( 5 )
+frame = 1
+playing = true
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+format = 1
+tile_data = PoolIntArray( 720895, 0, 0, 655360, 0, 0, 655361, 0, 0, 655362, 0, 0, 655363, 0, 0, 655364, 0, 0, 655365, 0, 0, 655366, 0, 0, 655367, 0, 0, 655368, 0, 0, 655369, 0, 0, 655370, 0, 0, 655371, 0, 0, 655372, 0, 0, 655373, 0, 0, 655374, 0, 0, 655375, 0, 0, 655376, 0, 0, 655377, 0, 0, 655378, 0, 0, 655379, 0, 0, 655380, 0, 0, 655381, 0, 0, 655382, 0, 0 )
+
+[node name="wall" type="StaticBody2D" parent="."]
+position = Vector2( -54, 18 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall"]
+position = Vector2( -10, 304.5 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="wall"]
+position = Vector2( -32, 304 )
+scale = Vector2( 0.625, 10.4844 )
+texture = ExtResource( 7 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 1536, 16 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( -1, 303 )
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="StaticBody2D"]
+position = Vector2( 28, 295.5 )
+scale = Vector2( 0.708333, 10.2344 )
+texture = ExtResource( 7 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 464, 368 )
+scale = Vector2( 0.483015, 0.471188 )
+texture = ExtResource( 25 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 711.563, 352.938 )
+scale = Vector2( 0.579352, 0.540066 )
+texture = ExtResource( 15 )
+
+[node name="Sprite3" type="Sprite" parent="."]
+position = Vector2( 232, 392 )
+scale = Vector2( 0.526009, 0.494898 )
+texture = ExtResource( 2 )
+
+[node name="Sprite4" type="Sprite" parent="."]
+position = Vector2( 981.125, 352.125 )
+scale = Vector2( 0.555732, 0.518907 )
+texture = ExtResource( 26 )
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+position = Vector2( -248, -8 )
+z_index = 1
+script = ExtResource( 4 )
+
+[node name="Sprite" type="AnimatedSprite" parent="KinematicBody2D"]
+position = Vector2( 341.545, 403.467 )
+scale = Vector2( 0.753249, 0.653527 )
+frames = SubResource( 3 )
+animation = "walking"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+position = Vector2( 346, 439 )
+shape = SubResource( 4 )
+
+[node name="Camera2D" type="Camera2D" parent="KinematicBody2D"]
+position = Vector2( 264, 342 )
+current = true
+limit_left = -15
+limit_right = 1500
+
+[node name="musica_festa" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 23 )
+volume_db = -10.0
+autoplay = true
+
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( -146, 199 )
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="Control"]
+position = Vector2( 519, 209 )
+scale = Vector2( 0.906907, 0.926667 )
+texture = ExtResource( 24 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control"]
+margin_left = 262.0
+margin_top = 85.0
+margin_right = 776.0
+margin_bottom = 144.0
+custom_colors/default_color = Color( 0.145098, 0.447059, 0.352941, 1 )
+custom_colors/selection_color = Color( 0.145098, 0.447059, 0.352941, 1 )
+custom_colors/font_color_selected = Color( 0.145098, 0.447059, 0.352941, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="Control"]
+
+[node name="barra" type="Sprite" parent="Control"]
+modulate = Color( 0.239216, 0.615686, 0.494118, 1 )
+position = Vector2( 742, 157.8 )
+scale = Vector2( 0.153942, 0.155357 )
+texture = ExtResource( 6 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control"]
+autoplay = "barra"
+anims/barra = SubResource( 8 )
+
+[node name="bebida" type="TextureButton" parent="."]
+margin_left = 504.0
+margin_top = 284.0
+margin_right = 566.0
+margin_bottom = 359.0
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = ExtResource( 12 )
+texture_hover = ExtResource( 21 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="bebida"]
+autoplay = "copo"
+anims/copo = SubResource( 7 )
+
+[connection signal="tween_all_completed" from="Control/Tween" to="Control" method="_on_Tween_tween_all_completed"]
+[connection signal="pressed" from="bebida" to="." method="_on_bebida_pressed"]

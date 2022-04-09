@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://fase_ensinomedio/fase_escolha/escolha_boa.webm" type="VideoStream" id=1]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends VideoPlayer
+#Rascunho da animação da escolha boa.
+
+#Quando a animação acaba, ele é direcionado novamente ao menu, uma vez que ainda não tem a próxima fase.
+func _on_VideoPlayer_finished():
+	get_tree().change_scene(\"res://menu/menu.tscn\")
+"
+
+[node name="VideoPlayer" type="VideoPlayer"]
+margin_right = 1078.0
+margin_bottom = 609.0
+stream = ExtResource( 1 )
+script = SubResource( 1 )
+
+[connection signal="finished" from="." to="." method="_on_VideoPlayer_finished"]

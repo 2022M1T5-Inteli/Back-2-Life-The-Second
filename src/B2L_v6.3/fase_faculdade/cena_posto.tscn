@@ -1,0 +1,186 @@
+[gd_scene load_steps=25 format=2]
+
+[ext_resource path="res://fase_ensinomedio/Cenario/spacebar.png" type="Texture" id=1]
+[ext_resource path="res://escolhas/Seguinte.png" type="Texture" id=2]
+[ext_resource path="res://caixa_dialogo/box3.png" type="Texture" id=3]
+[ext_resource path="res://fase_faculdade/vitor/v3.png" type="Texture" id=4]
+[ext_resource path="res://fase_faculdade/vitor/v2.png" type="Texture" id=5]
+[ext_resource path="res://fase_faculdade/vitor/v1.png" type="Texture" id=6]
+[ext_resource path="res://fase_faculdade/vitor/v5.png" type="Texture" id=7]
+[ext_resource path="res://fase_faculdade/vitor/v4.png" type="Texture" id=8]
+[ext_resource path="res://chao/chao.tres" type="TileSet" id=9]
+[ext_resource path="res://chao/floor.png" type="Texture" id=10]
+[ext_resource path="res://fase_faculdade/fase_escolha/escolha_posto.gd" type="Script" id=11]
+[ext_resource path="res://cenas_node/dialogo_posto.gd" type="Script" id=12]
+[ext_resource path="res://cenas_node/Movimento.gd" type="Script" id=13]
+[ext_resource path="res://fase_faculdade/fernanda/fumante falando 7.png" type="Texture" id=14]
+[ext_resource path="res://fase_faculdade/cenario/posto2.png" type="Texture" id=15]
+[ext_resource path="res://fase_faculdade/cenario/posto.png" type="Texture" id=16]
+[ext_resource path="res://fase_faculdade/fernanda/fumante falando 6.png" type="Texture" id=17]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 15 ), ExtResource( 16 ) ],
+"loop": true,
+"name": "default",
+"speed": 4.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 43, 312.5 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 182.5, 343.5 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 188.02, 255 )
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ ExtResource( 17 ), ExtResource( 14 ) ],
+"loop": true,
+"name": "default",
+"speed": 2.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 76.25, 285.5 )
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 8 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "walking",
+"speed": 5.0
+} ]
+
+[node name="cena_posto" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite" type="AnimatedSprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 704, 303 )
+scale = Vector2( 0.845151, 0.871429 )
+frames = SubResource( 1 )
+playing = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( -33, 302.5 )
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="StaticBody2D"]
+position = Vector2( -36, 305 )
+scale = Vector2( 0.489583, 10.2969 )
+texture = ExtResource( 10 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2( 1474, -26 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( -267.5, 309 )
+shape = SubResource( 7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( -33, 302.5 )
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="StaticBody2D2"]
+position = Vector2( -36, 305 )
+scale = Vector2( 0.489583, 10.2969 )
+texture = ExtResource( 10 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( -1278.98, 348.422 )
+rotation = -0.00897319
+shape = SubResource( 8 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 9 )
+format = 1
+tile_data = PoolIntArray( 720894, 0, 0, 720895, 0, 0, 655360, 0, 0, 655361, 0, 0, 655362, 0, 0, 655363, 0, 0, 655364, 0, 0, 655365, 0, 0, 655366, 0, 0, 655367, 0, 0, 655368, 0, 0, 655369, 0, 0, 655370, 0, 0, 655371, 0, 0, 655372, 0, 0, 655373, 0, 0, 655374, 0, 0, 655375, 0, 0, 655376, 0, 0, 655377, 0, 0, 655378, 0, 0, 655379, 0, 0, 655380, 0, 0 )
+
+[node name="Button" type="Button" parent="."]
+margin_left = 537.0
+margin_top = 385.0
+margin_right = 713.0
+margin_bottom = 433.0
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite2" type="Sprite" parent="Button"]
+position = Vector2( 86.5, 23.125 )
+scale = Vector2( 0.532353, 0.564583 )
+texture = ExtResource( 2 )
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
+position = Vector2( 428, 334 )
+scale = Vector2( 0.693396, 0.645006 )
+frames = SubResource( 6 )
+frame = 1
+playing = true
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+position = Vector2( 143, 3 )
+script = ExtResource( 13 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+position = Vector2( 777.25, 352.5 )
+shape = SubResource( 3 )
+
+[node name="Sprite" type="AnimatedSprite" parent="KinematicBody2D"]
+position = Vector2( 773, 355 )
+scale = Vector2( 0.823214, 0.655488 )
+frames = SubResource( 4 )
+animation = "walking"
+flip_h = true
+
+[node name="Camera2D" type="Camera2D" parent="KinematicBody2D"]
+position = Vector2( 164, 32 )
+anchor_mode = 0
+current = true
+zoom = Vector2( 0.9, 0.9 )
+limit_left = 10
+
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 12 )
+
+[node name="Sprite" type="Sprite" parent="Control"]
+position = Vector2( 647, 149 )
+scale = Vector2( 0.635886, 0.759333 )
+texture = ExtResource( 3 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control"]
+margin_left = 471.0
+margin_top = 48.0
+margin_right = 829.0
+margin_bottom = 110.0
+custom_colors/default_color = Color( 0.32549, 0.0941176, 0.266667, 1 )
+custom_colors/selection_color = Color( 0.32549, 0.0941176, 0.266667, 1 )
+custom_colors/font_color_selected = Color( 0.32549, 0.0941176, 0.266667, 1 )
+
+[node name="Tween" type="Tween" parent="Control"]
+
+[node name="barra" type="Sprite" parent="Control"]
+modulate = Color( 0.211765, 0.623529, 0.654902, 1 )
+position = Vector2( 809, 106 )
+scale = Vector2( 0.104291, 0.139286 )
+texture = ExtResource( 1 )
+
+[connection signal="pressed" from="Button" to="Button" method="_on_Button_pressed"]
+[connection signal="tween_all_completed" from="Control/Tween" to="Control" method="_on_Tween_tween_all_completed"]

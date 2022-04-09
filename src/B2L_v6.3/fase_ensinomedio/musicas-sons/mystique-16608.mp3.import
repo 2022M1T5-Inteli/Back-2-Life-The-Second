@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/mystique-16608.mp3-89bf80255bd31c692cda21b0601057ab.mp3str"
+
+[deps]
+
+source_file="res://fase_ensinomedio/musicas-sons/mystique-16608.mp3"
+dest_files=[ "res://.import/mystique-16608.mp3-89bf80255bd31c692cda21b0601057ab.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

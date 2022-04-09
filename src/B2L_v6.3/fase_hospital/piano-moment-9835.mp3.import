@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/piano-moment-9835.mp3-6b4c68213e71e420a5b391a6b4bb77ed.mp3str"
+
+[deps]
+
+source_file="res://fase_hospital/piano-moment-9835.mp3"
+dest_files=[ "res://.import/piano-moment-9835.mp3-6b4c68213e71e420a5b391a6b4bb77ed.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

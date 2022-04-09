@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://fase_ensinomedio/fase_escolha/Escolha-ruim-teste_1.webm" type="VideoStream" id=1]
+[ext_resource path="res://fase_trabalho/escolha/animacao_escolha_ruim3.gd" type="Script" id=2]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="VideoPlayer" type="VideoPlayer" parent="."]
+margin_right = 1044.0
+margin_bottom = 610.0
+stream = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[connection signal="finished" from="VideoPlayer" to="VideoPlayer" method="_on_VideoPlayer_finished"]
