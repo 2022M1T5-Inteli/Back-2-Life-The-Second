@@ -13,7 +13,7 @@
 ## Descrição
 
 <br><br>
-Projeto de um jogo com o objetivo de promover a saúde pública. O jogo foi criado como ferramenta para conscientizar a população jovem acerca das formas de prevenção dos principais tipos de câncer, bem como a importância da adoção dos bons hábitos para promoção de um melhor resultado no tratamento do câncer. Os jovens serão o veículo de propagação de tais informações no ambiente familiar, a fim de atingir e conscientizar a população adulta e idosa. 
+Projeto de um jogo digital com o objetivo de promover a saúde pública. O jogo foi criado como ferramenta para conscientizar a população jovem acerca das formas de prevenção dos principais tipos de câncer, bem como a importância da adoção dos bons hábitos para promoção de um melhor resultado no tratamento do câncer. Os jovens serão o veículo de propagação de tais informações no ambiente familiar, a fim de atingir e conscientizar a população adulta e idosa. 
 <br><br>
 <p align="center">
 <img src="https://pix4free.org/assets/library/2021-01-20/originals/game.jpg" alt="Back 2 Life" border="0">
