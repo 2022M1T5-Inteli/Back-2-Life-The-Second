@@ -1,4 +1,4 @@
-# Inteli - Instituto de Tecnologia e Liderança 
+﻿# Inteli - Instituto de Tecnologia e Liderança 
 
 <p align="center">
 <a href= "https://www.inteli.edu.br/"><img src="https://www.inteli.edu.br/wp-content/uploads/2021/08/20172028/marca_1-2.png" alt="Inteli - Instituto de Tecnologia e Liderança" border="0"></a>
@@ -22,7 +22,7 @@ Projeto de um jogo digital com o objetivo de promover a saúde pública. O jogo 
 
 
 <br><br>
-O jogo conta a história de um personagem que passa por uma situação de enfermidade (câncer), e ao se deparar com uma situação crítica de estresse, desencadeia um evento temporal que concede ao personagem o poder de voltar no tempo.
+O jogo conta a história de um personagem que passa por uma situação de enfermidade (câncer) e, ao se deparar com uma situação crítica de estresse, desencadeia um evento temporal que o concede o poder de voltar no tempo.
 Com essa habilidade, o personagem passa pelo desafio de se ver antes do diagnóstico do câncer, permitindo que ele tenha a possibilidade de alterar certos comportamentos e decisões nocivas que desencadearam seu câncer, bem como o resultado do seu tratamento. Sendo assim, o personagem enfrentará o desafio de tomar decisões e fazer escolhas que irão influenciar no enredo da história e seus possíveis finais.
 <br><br>
 
