@@ -8,7 +8,14 @@
 
 ## 4Life Dev Team
 
-## Integrantes: <a href="https://www.linkedin.com/in/antonio-nassar-65b9ba225">Antonio Barone Nassar</a>, <a href="https://www.linkedin.com/in/gabrielsporto/">Gabriel da Silva Porto</a>, <a href="https://www.linkedin.com/in/l%C3%ADvia-bonotto-9064641a3/">Lívia Mattoso Bonotto Cabral</a>, <a href="https://www.linkedin.com/in/luanadinamarcaparra/">Luana Dinamarca Parra</a>, <a href="https://www.linkedin.com/in/mateus-rafael-47601a1a0/">Mateus Rafael Miranda da Silva</a>, <a href="https://www.linkedin.com/in/patriciahonorato/">Patricia Honorato Moreira</a>, <a href="https://www.linkedin.com">Priscila Falcão dos Santos</a>
+## Integrantes: 
+- <a href="https://www.linkedin.com/in/antonio-nassar-65b9ba225">Antonio Barone Nassar</a>
+- <a href="https://www.linkedin.com/in/gabrielsporto/">Gabriel da Silva Porto</a>
+- <a href="https://www.linkedin.com/in/l%C3%ADvia-bonotto-9064641a3/">Lívia Mattoso Bonotto Cabral</a>
+- <a href="https://www.linkedin.com/in/luanadinamarcaparra/">Luana Dinamarca Parra</a> 
+- <a href="https://www.linkedin.com/in/mateus-rafael-47601a1a0/">Mateus Rafael Miranda da Silva</a>
+- <a href="https://www.linkedin.com/in/patriciahonorato/">Patricia Honorato Moreira</a>
+- <a href="https://www.linkedin.com">Priscila Falcão dos Santos</a>
 
 ## Descrição
 
@@ -16,7 +23,7 @@
 Projeto de um jogo digital com o objetivo de promover a saúde pública. O jogo foi criado como ferramenta para conscientizar a população jovem acerca das formas de prevenção dos principais tipos de câncer, bem como a importância da adoção dos bons hábitos para promoção de um melhor resultado no tratamento do câncer. Os jovens serão o veículo de propagação de tais informações no ambiente familiar, a fim de atingir e conscientizar a população adulta e idosa. 
 <br><br>
 <p align="center">
-<img src="https://github.com/2022M1T5/Projeto4/blob/main/imagens/B2L.png" alt="Back 2 Life" border="0">
+<img src="https://github.com/2022M1T5/Projeto4/blob/main/imagens/B2L.png?raw=true" alt="Back 2 Life" border="0">
   Game by <a href= "4Life Dev Team">4Life Dev Team</a> <a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a> 
 </p>
 
@@ -28,19 +35,22 @@ Com essa habilidade, o personagem passa pelo desafio de se ver antes do diagnós
 
 ## 🛠 Estrutura de pastas
 
--Raiz<br>
+- Raiz<br>
 |<br>
-|-->documentos<br>
-  &emsp;|-->antigos<br>
-  &emsp;|GDD.docx ou Documentação.docx<br>
+|--> documentos<br>
+  &emsp;|--> antigos<br>
+  &emsp;|--> Homologação<br>
+  &emsp;|--> Relatório Melhorias<br>
+  &emsp;| GDD 4Life V6.1 (versão final).pdf<br>
+  &emsp;| GDD 4Life V6.1 (versão final).docx<br>
 |-->executáveis<br>
-  &emsp;|-->windows<br>
-  &emsp;|-->android<br>
+  &emsp;|-->Windows<br>
   &emsp;|-->HTML<br>
 |-->imagens<br>
-|-->src<br>
-|readme.md<br>
-|license.txt<br>
+  &emsp;|--> personagens_1<br>
+|--> src<br>
+| readme.md<br>
+| license.txt<br>
 
 A pasta raiz contem dois arquivos que devem ser alterados:
 
@@ -52,7 +62,7 @@ Há também 4 pastas que seguem da seguinte forma:
 
 <b>documentos</b>: Aqui estarão todos os documentos do projeto, mas principalmente o <b>GDD (Game Design Document)/Documentação do Sistema</b>. Há uma pasta <b>antigos</b> onde estarão todas as versões antigas da documentação.
 
-<b>executáveis</b>: Aqui estarão todos os executáveis do jogo, prontos para rodar. Há no mínimo 3 pastas, uma para binários <b>Windows</b>, uma para binários <b>android</b> e uma para a <b>Web/HTML</b>
+<b>executáveis</b>: Aqui estarão todos os executáveis do jogo, prontos para rodar, contendo duas pastas: uma para binários <b>windows</b> e uma para a <b>Web/HTML</b>
 
 <b>imagens</b>: Algumas imagens do jogo/sistema e logos prontos para serem utilizados e visualizados.
 
@@ -60,69 +70,43 @@ Há também 4 pastas que seguem da seguinte forma:
 
 ## 🛠 Instalação
 
-<b>Android:</b>
-
-Faça o Download do JOGO.apk no seu celular.
-Execute o APK e siga as instruções de seu telefone.
-
-```sh
-Coloque código do prompt de comnando se for necessário
-```
-
 <b>Windows:</b>
 
-Não há instalação! Apenas executável!
-Encontre o JOGO.exe na pasta executáveis e execute-o como qualquer outro programa.
+Não há instalação, apenas executável. Baixe os arquivos disponíveis em https://drive.google.com/drive/folders/1qmuJpQEw4QDe9Wbczaexp9NUL6NGIfL8 e execute "B2L_v7.exe" como qualquer outro programa.
 
-```sh
-Coloque código do prompt de comnando se for necessário
+```
+Observe que é necessário que o arquivo "B2L_v7.pck" esteja
+no mesmo diretório que "B2L_v7.exe" para que o jogo inicie
+corretamente.
 ```
 
 <b>HTML:</b>
 
-Não há instalação!
-Encontre o index.html na pasta executáveis e execute-o como uma página WEB (através de algum browser).
+Não há instalação! Baixe os arquivos disponíveis em https://github.com/2022M1T5/Projeto4/tree/main/execut%C3%A1veis/HTML/html e execute-o como uma página da web (através de algum navegador).
 
-## 📈 Exemplo de uso
+```sh
+Dependendo de suas configurações de firewall, talvez seja necessário
+instaurar um web service como xampp ou wampp para que o jogo rode lo-
+calmente.
+```
 
-Alguns exemplos interessantes e úteis sobre como seu projeto pode ser utilizado.
-
-Adicione blocos de códigos e, se necessário, screenshots.
-
-Este modelo pode ser copiado e utilizado à vontade.
-
-Através da cópia/clone/ download do repositório, altere os dados do readme.md e carregue os arquivos de seu projeto.
-
-## 💻 Configuração para Desenvolvimento
-
-Descreva como instalar todas as dependências para desenvolvimento e como rodar um test-suite automatizado de algum tipo. Se necessário, faça isso para múltiplas plataformas.
+## 💻 Configuração para desenvolvimento
 
 Para abrir este projeto você necessita das seguintes ferramentas:
 
--<a href="https://godotengine.org/download">GODOT</a>
+-<a href="https://godotengine.org/download"> Godot</a>
 
-```sh
-make install
-npm test
-Coloque código do prompt de comnando se for necessário
+Instruções para a configuração do ambiente de desenvolvimento:
 ```
 
-## 🗃 Histórico de lançamentos
+1) Baixe a source do projeto em https://drive.google.com/drive/folders/1a7d3twbKvm66qOIikYqGBLDViEiREC3R.
+2) Abra a engine de desenvolvimento (godot).
+3) No gerenciador de projetos inicial, clique no botão "importar" e, em seguida, no botão "navegar".
+4) Navegue até a source do projeto baixada.
+5) Selecione o arquivo "project.godot" e em seguida clique no botão "abrir".
+6) Pronto. O seu ambiente de desenvolvimento está configurado.
 
-A cada atualização os detalhes devem ser lançados aqui.
-
-* 0.2.1 - 25/01/2022
-    * MUDANÇA: Atualização de docs (código do módulo permanece inalterado)
-* 0.2.0 - 15/01/2022
-    * MUDANÇA: Remove `setDefaultXYZ()`
-    * ADD: Adiciona `init()`
-* 0.1.1 - 11/01/2022
-    * CONSERTADO: Crash quando chama `baz()` (Obrigado @NomeDoContribuidorGeneroso!)
-* 0.1.0 - 10/01/2022
-    * O primeiro lançamento adequado
-    * MUDANÇA: Renomeia `foo()` para `bar()`
-* 0.0.1 - 01/01/2022
-    * Trabalho em andamento
+```
 
 ## 📋 Licença/License
 
