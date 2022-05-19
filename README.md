@@ -38,9 +38,6 @@ Com essa habilidade, o personagem passa pelo desafio de se ver antes do diagnós
 - Raiz<br>
 |<br>
 |--> documentos<br>
-  &emsp;|--> antigos<br>
-  &emsp;|--> Homologação<br>
-  &emsp;|--> Relatório Melhorias<br>
   &emsp;| GDD 4Life V6.1 (versão final).pdf<br>
   &emsp;| GDD 4Life V6.1 (versão final).docx<br>
 |-->executáveis<br>
@@ -49,6 +46,7 @@ Com essa habilidade, o personagem passa pelo desafio de se ver antes do diagnós
 |-->imagens<br>
   &emsp;|--> personagens_1<br>
 |--> src<br>
+  &emsp;|--> source_versao_final.pdf
 | readme.md<br>
 | license.txt<br>
 
