@@ -46,7 +46,7 @@ Com essa habilidade, o personagem passa pelo desafio de se ver antes do diagnós
 |-->imagens<br>
   &emsp;|--> personagens_1<br>
 |--> src<br>
-  &emsp;|--> source_versao_final.pdf
+  &emsp;|--> source_versao_final.pdf<br>
 | readme.md<br>
 | license.txt<br>
 
